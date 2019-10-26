@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BasketBall</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #back {
+            position: relative;
+            border: none;
+            width: 1200px;
+            height: 500px;
+            background: #D8E5F8;
+            overflow: hidden;
+        }
+
+
+        .outerBall {
+            position: absolute;
+            height: 60px;
+            width: 60px;
+            left: -60px;
+            bottom: 0px;
+            
+            animation: movement 5.2s linear infinite;
+        }
+
+        @keyframes movement {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(1260px);
+            }
+        }
+
+        .upDown {
+            height: 60px;
+            width: 60px;
+            position: absolute;
+            animation: bounce 6s infinite ease-in-out;
+        }
+
+        @keyframes bounce {
+            0%,
+            25%,
+            50%,
+            75%,
+            100% {
+                transform: translateY(-400px);
+                animation-timing-function: ease-in;
+            }
+            10%,
+            35%,
+            60%,
+            85% {
+                transform: translateY(0);
+                animation-timing-function: ease-out;
+            }
+            
+        }
+
+        .ball {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            background: radial-gradient(rgb(25, 120, 255), rgb(0, 64, 138));
+            animation: shape 6s infinite;
+        }
+        @keyframes shape{
+            0%,10%,25%,35%,50%,60%,75%,85%,95%,100%{
+                transform: scale(1,1);
+            }
+            11%,35%,61%,86%{
+                transform: scale(1.05,0.9);
+            }
+            13%,38%,63%,88%{
+                transform: scale(1,1);
+            }
+        }
+
+        .basket {
+
+            height: 20px;
+            width: 90px;
+            position: absolute;
+            top: 190px;
+            left: 1100px;
+            border: 3px solid rgb(0, 64, 138);
+            background: none;
+            border-radius: 50%;
+            z-index: 2;
+        }
+        .shadow{
+            position: absolute;
+            width:60px;
+            height: 4px;
+            background: rgb(199, 199, 199);
+            top:58px;
+            border-radius: 50%;
+                transition: 4s ease-out;
+            animation:shadow 6s infinite ;
+        }
+        @keyframes shadow{
+            0%,
+            25%,
+            50%,
+            75%,
+            100%{
+                height: 4px;
+            background: rgb(199, 199, 199);
+                width:50px;
+            }
+            13%, 38%, 63%, 88%{
+                height: 1px;
+                width: 75px;
+                background: rgb(110, 110, 110);
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="back">
+        <div class="basket"></div>
+        <div class="outerBall">
+            <div class="shadow"></div>
+            <div class="upDown">
+                <div class="ball"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

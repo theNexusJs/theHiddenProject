@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Star Pattern</title>
+    <style>
+    body{
+        display:flex;
+        height:100vh;
+        justify-content: center;
+        align-items: center;
+    }
+    #back{
+        width:40%;
+        height:80%;
+        background:linear-gradient(#6190E8,#A7BFE8);
+        box-shadow: 0px 0px 6px #000;
+    }
+    .star{
+        height: 60px;
+        width: 60px;
+        position: relative;
+        top:50px;
+        left:44%;
+        border-radius:50%;
+        background: #fff;
+        animation: move 5s ease-in-out infinite;
+    }
+    @keyframes move{
+        0%{
+            transform: translate(0,0);
+        }
+        20%{
+            transform: translate(150px,380px);
+        }
+        40%{
+            transform:translate(-170px,190px);
+        }
+        60%{
+            transform: translate(170px,190px)
+        }
+        80%{
+            transform: translate(-150px,380px)
+        }
+        100%{
+            transform: translate(0,0);
+        }
+        
+    }
+    </style>
+</head>
+
+<body>
+    <div id="back">
+        <div class="star">
+
+        </div>
+    </div>
+</body>
+</html>
